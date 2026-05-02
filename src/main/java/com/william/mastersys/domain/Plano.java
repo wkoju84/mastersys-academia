@@ -16,6 +16,8 @@ public class Plano {
     @Column(name = "valor_mensal")
     private BigDecimal valorMensal;
 
+    private Boolean ativo = true;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "modalidade_id")
     private Modalidade modalidade;
@@ -42,6 +44,14 @@ public class Plano {
 
     public void setValorMensal(BigDecimal valorMensal) {
         this.valorMensal = valorMensal;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
     }
 
     public Modalidade getModalidade() {
