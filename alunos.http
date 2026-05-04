@@ -1,0 +1,55 @@
+@baseUrl = http://localhost:8080
+
+### Cadastrar aluno
+POST {{baseUrl}}/alunos
+Content-Type: application/json
+
+{
+  "nome" : "Fábio Barbosa",
+  "dataNascimento" : "2001-11-16",
+  "sexo" : "M",
+  "telefone" : "1122334455",
+  "celular" : "11911223344",
+  "email" : "fabio@email.com",
+  "observacao" : "Aluno iniciante",
+  "endereco" : "Rua das Flores",
+  "numero" : "123",
+  "complemento" : "Casa 3",
+  "bairro" : "centro",
+  "cidade" : "Diadema",
+  "estado" : "SP",
+  "cep" : "09911575"
+}
+
+### Listar alunos
+GET {{baseUrl}}/alunos
+
+### Listar alunos por paginação
+GET {{baseUrl}}/alunos?page=0&size=10&sort=nome,asc
+
+### Buscar aluno por ID
+GET {{baseUrl}}/alunos/1
+
+### Atualizar aluno
+PUT {{baseUrl}}/alunos/1
+Content-Type: application/json
+
+{
+  "nome" : "Fábio Barbosa de Sousa",
+  "dataNascimento" : "2001-11-16",
+  "sexo" : "M",
+  "telefone" : "1122334455",
+  "celular" : "11911223344",
+  "email" : "fabio@email.com",
+  "observacao" : "Aluno intermediário",
+  "endereco" : "Rua das Flores",
+  "numero" : "123",
+  "complemento" : "Casa 3",
+  "bairro" : "centro",
+  "cidade" : "Diadema",
+  "estado" : "SP",
+  "cep" : "09911575"
+}
+
+### Excluir aluno
+DELETE {{baseUrl}}/alunos/1
