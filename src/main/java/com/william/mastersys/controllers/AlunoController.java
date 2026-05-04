@@ -3,6 +3,7 @@ package com.william.mastersys.controllers;
 import com.william.mastersys.dtos.AlunoRequest;
 import com.william.mastersys.dtos.AlunoResponse;
 import com.william.mastersys.services.AlunoService;
+import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,7 @@ public class AlunoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public AlunoResponse cadastrar(@RequestBody AlunoRequest request){
+    public AlunoResponse cadastrar(@RequestBody @Valid AlunoRequest request){
         return service.cadastrar(request);
     }
 
@@ -35,7 +36,7 @@ public class AlunoController {
     }
 
     @PutMapping("/{id}")
-    public AlunoResponse atualizar(@PathVariable Long id, @RequestBody AlunoRequest alunoRequest){
+    public AlunoResponse atualizar(@PathVariable Long id, @RequestBody @Valid AlunoRequest alunoRequest){
         return service.atualizar(id, alunoRequest);
     }
 

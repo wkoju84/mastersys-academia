@@ -53,3 +53,24 @@ Content-Type: application/json
 
 ### Excluir aluno
 DELETE {{baseUrl}}/alunos/1
+
+### Cadastrar aluno inválido
+POST {{baseUrl}}/alunos
+Content-Type: application/json
+
+{
+  "nome" : "",
+  "dataNascimento" : "2001-11-16",
+  "sexo" : "M",
+  "telefone" : "1122334455",
+  "celular" : "11911223344",
+  "email" : "",
+  "observacao" : "Aluno iniciante",
+  "endereco" : "Rua das Flores",
+  "numero" : "123",
+  "complemento" : "Casa 3",
+  "bairro" : "centro",
+  "cidade" : "Diadema",
+  "estado" : "SP",
+  "cep" : "09911575"
+}
