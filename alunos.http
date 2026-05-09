@@ -74,3 +74,27 @@ Content-Type: application/json
   "estado" : "SP",
   "cep" : "09911575"
 }
+
+### Listar todos
+GET {{baseUrl}}/alunos?page=0&size=10&sort=nome,asc
+
+### Listar por nome
+GET {{baseUrl}}/alunos?nome=joao&page=0&size=10&sort=nome,asc
+
+### Listar por cidade
+GET {{baseUrl}}/alunos?cidade=Diadema&page=0&size=10&sort=nome,asc
+
+### Listar por estado
+GET {{baseUrl}}/alunos?estado=SP&page=0&size=10&sort=nome,asc
+
+### Listar por email
+GET {{baseUrl}}/alunos?email=joao@email.com&page=0&size=10&sort=nome,asc
+
+### Faturamento mensal
+GET {{baseUrl}}/relatorios/faturamento-mensal
+
+### Alunos por cidade
+GET {{baseUrl}}/relatorios/alunos-por-cidade
+
+### Faturas em aberto
+GET {{baseUrl}}/relatorios/faturas-em-aberto

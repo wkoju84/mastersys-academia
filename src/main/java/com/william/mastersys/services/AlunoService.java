@@ -1,10 +1,12 @@
 package com.william.mastersys.services;
 
 import com.william.mastersys.domain.Aluno;
+import com.william.mastersys.dtos.AlunoFiltroRequest;
 import com.william.mastersys.dtos.AlunoRequest;
 import com.william.mastersys.dtos.AlunoResponse;
 import com.william.mastersys.exceptions.RegraNegocioException;
 import com.william.mastersys.repositories.AlunoRepository;
+import com.william.mastersys.specifications.AlunoSpecification;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -30,8 +32,8 @@ public class AlunoService {
         return AlunoResponse.fromEntity(alunoSalvo);
     }
 
-    public Page<AlunoResponse> listar(Pageable pageable){
-        return alunoRepository.findAll(pageable).map(AlunoResponse::fromEntity);
+    public Page<AlunoResponse> listar(AlunoFiltroRequest filtro, Pageable pageable){
+        return alunoRepository.findAll(AlunoSpecification.comFiltros(filtro), pageable).map(AlunoResponse::fromEntity);
     }
 
     public AlunoResponse buscarPorId(Long id){

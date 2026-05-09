@@ -1,0 +1,10 @@
+package com.william.mastersys.dtos;
+
+public record AlunoFiltroRequest(
+        String nome,
+        String email,
+        String celular,
+        String cidade,
+        String estado
+) {
+}

@@ -1,5 +1,6 @@
 package com.william.mastersys.controllers;
 
+import com.william.mastersys.dtos.AlunoFiltroRequest;
 import com.william.mastersys.dtos.AlunoRequest;
 import com.william.mastersys.dtos.AlunoResponse;
 import com.william.mastersys.services.AlunoService;
@@ -26,8 +27,8 @@ public class AlunoController {
     }
 
     @GetMapping
-    public Page<AlunoResponse> listar(Pageable pageable){
-        return service.listar(pageable);
+    public Page<AlunoResponse> listar(AlunoFiltroRequest filtro, Pageable pageable){
+        return service.listar(filtro, pageable);
     }
 
     @GetMapping("/{id}")
