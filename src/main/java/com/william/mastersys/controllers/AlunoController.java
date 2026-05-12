@@ -1,5 +1,6 @@
 package com.william.mastersys.controllers;
 
+import com.william.mastersys.doc.AlunoControllerDoc;
 import com.william.mastersys.dtos.AlunoFiltroRequest;
 import com.william.mastersys.dtos.AlunoRequest;
 import com.william.mastersys.dtos.AlunoResponse;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/alunos")
-public class AlunoController {
+public class AlunoController implements AlunoControllerDoc {
 
     private final AlunoService service;
 
